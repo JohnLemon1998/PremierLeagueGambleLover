@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FootBall Bet</title>
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+</head>
+
+<body class="landing">
+<header id="header" class="alt">
+		<h1><a href="index.html">Football bet</a></h1>
+</header>
+
+<section id="banner">
+	  <img src="/images/Soccerballl.png" alt="soccer ball">
+		<h2>You wanna win?</h2>
+			<p>Let's look at the upcoming premier league matches.</p>
+</section>
+
+{{#each mergedData }}
+<section id="one" class="wrapper style1">
+    		<div class="inner">
+          <h1 id="text_inbox">{{this.DateTime}}</h1>
+					<article class="feature left">
+						<div class="content">
+                <div class="image-with-text">
+                 <img  src="{{this.HomeTeamLogoUrl}}" alt="">
+							   <a href="/team/{{this.HomeTeamKey}}">{{this.HomeTeamName}}</a>
+                <p id="text_inbox">VS</p>
+                 <img  src="{{this.AwayTeamLogoUrl}}" alt="">
+                 <a href="/team/{{this.AwayTeamKey}}">{{this.AwayTeamName}}</a>
+                </div>
+			</div>
+            
+    <table border="1">
+    <tr>
+        <td>Odds</td>
+        <td>{{this.HomeTeamKey}}</td>
+        <td>Draw</td>
+        <td>{{this.AwayTeamKey}}</td>
+    </tr>
+    <tr>
+        <td>{{this.0.key}}</td>
+        <td>{{this.0.homeodds}}</td>
+        <td>{{this.0.drawodds}}</td>
+        <td>{{this.0.awayodds}}</td>
+    </tr>
+    <tr>
+        <td>{{this.1.key}}</td>
+        <td>{{this.1.homeodds}}</td>
+        <td>{{this.1.drawodds}}</td>
+        <td>{{this.1.awayodds}}</td>
+    </tr>
+    <tr>
+        <td>{{this.2.key}}</td>
+        <td>{{this.2.homeodds}}</td>
+        <td>{{this.2.drawodds}}</td>
+        <td>{{this.2.awayodds}}</td>
+    </tr>
+</table>
+  </article>
+  </div>
+</section>
+{{/each}}
+
+<div id="counter" style="position:absolute; right: 20px; top:15px">
+    Visitor Count : {{ pageCount }}
+</div>
+
+</body>
+</html>

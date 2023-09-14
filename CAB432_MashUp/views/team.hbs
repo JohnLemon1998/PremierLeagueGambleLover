@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Team Info</title>
+    <link rel='stylesheet' href='/stylesheets/main.css' />
+</head>
+
+<body class="landing">
+<header id="header" class="alt">
+		<h1><a href="index.html">Football bet</a></h1>
+</header>
+
+<section id="banner">
+    <img src="{{team.[0].team.logo}}" alt="soccer">
+    <p></p>
+    <h1>{{team.[0].team.name}}</h1>
+</section>
+
+<section id="one" class="wrapper style1">
+    		<div class="inner">
+        <div class="text_container">
+          <div class="text_left">The latest Line Ups</div>
+          <div class="text_right">News</div>
+        </div>
+
+					<article class="feature left">
+					<div class="content">
+            <div class="image-with-text">
+            <table>
+              <tr>
+             <th>Coach</th>
+              </tr>
+          
+              <tr>
+                <td></td>
+                <td>{{team.[0].coach.name}}</td>
+              </tr>
+
+              <tr>
+            <th>Starting 11</th>
+              </tr>
+
+            {{#each team.[0].startXI }}
+            <tr>
+            <td>{{ this.player.number }}</td>
+            <td>{{ this.player.name }}</td>
+            </tr>
+            {{/each}}
+            
+            <tr>
+            <th>Substitutes</th>
+            </tr>
+
+            {{#each team.[0].substitutes }}
+            <tr>
+            <td>{{ this.player.number }}</td>
+            <td>{{this.player.name}}</td>
+            </tr>
+            {{/each}}
+            </table>
+          </div>
+          </div>
+
+            <div>
+            {{#each news}}
+             <p>{{this.pubDate}}</p>
+             <h1>{{this.title}}</h1>
+             <p>{{this.description}}</p>
+             <p>{{this.link}}</p>
+             <hr>
+            {{/each}}
+            </div>
+  
+  </article>
+  </div>
+</section>
+
+</body>
+</html>
